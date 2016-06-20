@@ -17,6 +17,7 @@ class HangpersonGame
   end
   
   def guess(letter)
+    raise ArgumentError, "Invalid guess #{letter}" if letter == nil || letter.empty? || !(letter =~ /^[a-z]$/i)
     letter.downcase!
     valid = true
     if @word.include? letter
