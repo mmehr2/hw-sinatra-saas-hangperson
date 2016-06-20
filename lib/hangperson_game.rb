@@ -33,6 +33,16 @@ class HangpersonGame
   def word_with_guesses
     @word.gsub(/(.)/) { |x| @guesses.include?(x) ? x : '-' }
   end
+  
+  def check_win_or_lose
+    if !(word_with_guesses.include? '-')
+      :win
+    elsif @wrong_guesses.length >= 7
+      :lose
+    else
+      :play
+    end
+  end
 
   def self.get_random_word
     require 'uri'
