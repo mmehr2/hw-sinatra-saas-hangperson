@@ -29,6 +29,10 @@ class HangpersonGame
     end
     valid
   end
+  
+  def word_with_guesses
+    @word.gsub(/(.)/) { |x| @guesses.include?(x) ? x : '-' }
+  end
 
   def self.get_random_word
     require 'uri'
