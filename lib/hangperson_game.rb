@@ -15,6 +15,16 @@ class HangpersonGame
     @wrong_guesses = ''
     self
   end
+  
+  def guess(letter)
+    answer = @word.include? letter
+    if answer
+      @guesses << letter
+    else
+      @wrong_guesses << letter
+    end
+    answer
+  end
 
   def self.get_random_word
     require 'uri'
