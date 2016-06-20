@@ -17,6 +17,7 @@ class HangpersonGame
   end
   
   def guess(letter)
+    letter.downcase!
     valid = true
     if @word.include? letter
       valid = ! (@guesses.include? letter)
