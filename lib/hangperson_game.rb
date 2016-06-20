@@ -17,12 +17,15 @@ class HangpersonGame
   end
   
   def guess(letter)
+    valid = true
     if @word.include? letter
-      @guesses << letter
+      valid = ! (@guesses.include? letter)
+      @guesses << letter if valid 
     else
-      @wrong_guesses << letter
+      valid = ! (@wrong_guesses.include? letter)
+      @wrong_guesses << letter if valid
     end
-    true
+    valid
   end
 
   def self.get_random_word
