@@ -59,7 +59,7 @@ class HangpersonGame
   
  #private
   def self.get_random_word_remote
-    #@@source = 'Watchout4snakes.com'
+    @@source = 'Watchout4snakes.com'
     require 'uri'
     require 'net/http'
     uri = URI('http://watchout4snakes.com/wo4snakes/Random/RandomWord')
