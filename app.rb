@@ -21,6 +21,11 @@ class HangpersonApp < Sinatra::Base
     redirect '/new'
   end
   
+  # Challenge: create a local SOA endpoint to generate words using the local dicitonary
+  get '/word' do
+    HangpersonGame.get_random_word_local || ''
+  end
+  
   get '/new' do
     flash[:message] = ''
     erb :new
