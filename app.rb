@@ -22,6 +22,7 @@ class HangpersonApp < Sinatra::Base
   end
   
   get '/new' do
+    flash[:message] = ''
     erb :new
   end
   
